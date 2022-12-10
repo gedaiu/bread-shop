@@ -1,7 +1,6 @@
 {{page-title 'Order a Sandwich'}}
 
 <div class='py-5 text-center'>
-
   <div
     class='order-sandwich-banner d-inline-block border border-dark rounded-circle mb-5'
   ></div>
@@ -31,7 +30,10 @@
       @onChange={{this.changeBreadType}}
     />
 
-    <Sandwich::FillingSelect class='mb-5' />
+    <Sandwich::FillingSelect
+      class='mb-5'
+      @onChangeMainFilling={{this.changeMainFilling}}
+    />
 
     <hr class='my-4' />
 
