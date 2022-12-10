@@ -11,4 +11,9 @@ export default class OrderSandwichController extends Controller {
   changeMainFilling(value) {
     this.model.sandwich.mainFilling = value;
   }
+
+  @action
+  changeExtras(value) {
+    this.model.sandwich.extras = value;
+  }
 }

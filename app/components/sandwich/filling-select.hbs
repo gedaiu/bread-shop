@@ -28,6 +28,8 @@
         type='checkbox'
         checked={{element.checked}}
         id='extra-option-{{index}}'
+        value={{element.name}}
+        onChange={{fn this.changeExtra element.name}}
       />
       <label class='form-check-label' for='extra-option-{{index}}'>
         {{element.name}}

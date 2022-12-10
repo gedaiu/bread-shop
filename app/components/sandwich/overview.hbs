@@ -28,6 +28,17 @@
     <span class='text-muted'>$8</span>
   </li>
 
+  {{#if @value.extras}}
+    <li class='list-group-item d-flex justify-content-between lh-sm'>
+      <div>
+        <h6 class='my-0'>Extras</h6>
+        <small class='text-muted'>
+          {{@value.extras}}
+        </small>
+      </div>
+      <span class='text-muted'>$3</span>
+    </li>
+  {{/if}}
   <li class='list-group-item d-flex justify-content-between'>
     <span>Total (USD)</span>
     <strong>$20</strong>

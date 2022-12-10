@@ -12,4 +12,15 @@ export default class SandwichFillingSelectComponent extends Component {
   changeMainFilling(event) {
     this.args.onChangeMainFilling(event.target.value);
   }
+
+  @action
+  changeExtra(value, event) {
+    const inputs = [
+      ...event.target.parentNode.parentNode.querySelectorAll('input:checked'),
+    ];
+
+    const values = inputs.map((a) => a.getAttribute('value'));
+
+    this.args.onChangeExtras(values);
+  }
 }

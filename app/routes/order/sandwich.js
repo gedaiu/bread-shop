@@ -4,7 +4,7 @@ import { tracked } from '@glimmer/tracking';
 export class Sandwich {
   @tracked breadType;
   @tracked mainFilling;
-  @tracked otherFilling;
+  @tracked extras = [];
 }
 
 export default class BuySandwichRoute extends Route {
