@@ -8,7 +8,7 @@
       <h6 class='my-0'>Bread type</h6>
 
       {{#if @value.breadType}}
-        <small class='text-muted'>{{@value.breadType}}</small>
+        <small class='text-muted bread-type-value'>{{@value.breadType}}</small>
       {{else}}
         <small class='text-info'>You haven't selected a bread type yet</small>
       {{/if}}
@@ -20,7 +20,7 @@
     <div>
       <h6 class='my-0'>Main filling</h6>
       {{#if @value.mainFilling}}
-        <small class='text-muted'>{{@value.mainFilling}}</small>
+        <small class='text-muted main-filling-value'>{{@value.mainFilling}}</small>
       {{else}}
         <small class='text-info'>You haven't selected a main filling yet</small>
       {{/if}}
@@ -32,7 +32,7 @@
     <li class='list-group-item d-flex justify-content-between lh-sm'>
       <div>
         <h6 class='my-0'>Extras</h6>
-        <small class='text-muted'>
+        <small class='text-muted extra-filling-value'>
           {{@value.extras}}
         </small>
       </div>
