@@ -5,6 +5,7 @@ export class Sandwich {
   @tracked breadType;
   @tracked mainFilling;
   @tracked extras = [];
+  @tracked promoCode;
 }
 
 export default class BuySandwichRoute extends Route {
