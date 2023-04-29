@@ -29,7 +29,20 @@ export default class SandwichOverviewComponent extends Component {
     return price;
   }
 
-  get total() {
+  get productPrice() {
     return this.breadPrice + this.fillingPrice + this.extrasPrices;
+  }
+
+  get promoPrice() {
+    if (!this.args.value?.promoCode) {
+      return 0;
+    }
+
+    return this.productPrice * 0.1;
+  }
+
+  get total() {
+    const rawPrice = this.productPrice + this.promoPrice;
+    return Math.round(rawPrice * 10) / 10;
   }
 }
