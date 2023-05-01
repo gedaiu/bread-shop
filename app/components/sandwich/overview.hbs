@@ -13,7 +13,7 @@
         <small class='text-info'>You haven't selected a bread type yet</small>
       {{/if}}
     </div>
-    <span class='text-muted'>{{this.breadPrice}}$</span>
+    <span class='text-muted bread-type-price'>{{this.breadPrice}}$</span>
   </li>
 
   <li class='list-group-item d-flex justify-content-between lh-sm'>
@@ -25,7 +25,7 @@
         <small class='text-info'>You haven't selected a main filling yet</small>
       {{/if}}
     </div>
-    <span class='text-muted'>{{this.fillingPrice}}$</span>
+    <span class='text-muted main-filling-price'>{{this.fillingPrice}}$</span>
   </li>
 
   {{#if @value.extras}}
@@ -36,24 +36,19 @@
           {{this.extras}}
         </small>
       </div>
-      <span class='text-muted'>{{this.extrasPrices}}$</span>
+      <span class='text-muted extra-filling-price'>{{this.extrasPrices}}$</span>
     </li>
   {{/if}}
 
   {{#if this.promoPrice}}
     <li class='list-group-item d-flex justify-content-between lh-sm'>
-      <div>
-        <h6 class='my-0'>Discount</h6>
-        <small class='text-muted extra-filling-value'>
-          {{this.extras}}
-        </small>
-      </div>
+      <h6 class='my-0'>Discount</h6>
       <span class='text-muted'>-10%</span>
     </li>
   {{/if}}
 
   <li class='list-group-item d-flex justify-content-between'>
     <span>Total (USD)</span>
-    <strong>{{this.total}}$</strong>
+    <strong class='total-price'>{{this.total}}$</strong>
   </li>
 </ul>

@@ -33,12 +33,16 @@ export default class SandwichOverviewComponent extends Component {
     return this.breadPrice + this.fillingPrice + this.extrasPrices;
   }
 
+  get extras() {
+    return this.args.value.extras.join(", ");
+  }
+
   get promoPrice() {
     if (!this.args.value?.promoCode) {
       return 0;
     }
 
-    return this.productPrice * 0.1;
+    return this.productPrice * -0.1;
   }
 
   get total() {
