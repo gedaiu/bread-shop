@@ -1,4 +1,7 @@
 import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
+import { later } from '@ember/runloop';
 
 const breadPrices = {
   'white bread': 4,
@@ -15,6 +18,8 @@ const fillingPrices = {
 };
 
 export default class SandwichOverviewComponent extends Component {
+  @tracked isWaiting;
+
   get breadPrice() {
     return breadPrices[this.args.value.breadType] ?? 0;
   }
@@ -34,7 +39,7 @@ export default class SandwichOverviewComponent extends Component {
   }
 
   get extras() {
-    return this.args.value.extras.join(", ");
+    return this.args.value.extras.join(', ');
   }
 
   get promoPrice() {
@@ -48,5 +53,14 @@ export default class SandwichOverviewComponent extends Component {
   get total() {
     const rawPrice = this.productPrice + this.promoPrice;
     return Math.round(rawPrice * 10) / 10;
+  }
+
+  @action
+  waitSomeTime() {
+    this.isWaiting = true;
+
+    later(() => {
+      this.isWaiting = false;
+    }, 200);
   }
 }
