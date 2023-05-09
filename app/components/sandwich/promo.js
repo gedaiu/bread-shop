@@ -3,7 +3,7 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import fetch from 'fetch';
 
-export default class SandwichPromoComponent extends Component
+export default class SandwichPromoComponent extends Component {
   @tracked _promo;
   @tracked isLoading;
   @tracked isError;
