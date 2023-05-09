@@ -1,9 +1,9 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
-import { later } from '@ember/runloop';
+import fetch from 'fetch';
 
-export default class SandwichPromoComponent extends Component {
+export default class SandwichPromoComponent extends Component
   @tracked _promo;
   @tracked isLoading;
   @tracked isError;
@@ -25,20 +25,19 @@ export default class SandwichPromoComponent extends Component {
   }
 
   @action
-  redeem() {
-    const time = 500 + Math.random() * 500;
+  async redeem() {
     this.isLoading = true;
     this.isError = false;
 
-    later(() => {
-      this.isLoading = false;
+    try {
+      await fetch(`/promo/${this.promo}.json`);
 
-      if (this.promo == 'SPRING20') {
-        this.args.value.promoCode = this.promo;
-      } else {
-        this.args.value.promoCode = '';
-        this.isError = true;
-      }
-    }, time);
+      this.args.value.promoCode = this.promo;
+    } catch(err) {
+      this.args.value.promoCode = '';
+      this.isError = true;
+    }
+
+    this.isLoading = false;
   }
 }
