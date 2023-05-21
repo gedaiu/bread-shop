@@ -13,7 +13,7 @@
         <small class='text-info'>You haven't selected a bread type yet</small>
       {{/if}}
     </div>
-    <span class='text-muted bread-type-price'>{{this.breadPrice}}$</span>
+    <span class='text-muted bread-type-price'>${{this.breadPrice}}</span>
   </li>
 
   <li class='list-group-item d-flex justify-content-between lh-sm'>
@@ -25,7 +25,7 @@
         <small class='text-info'>You haven't selected a main filling yet</small>
       {{/if}}
     </div>
-    <span class='text-muted main-filling-price'>{{this.fillingPrice}}$</span>
+    <span class='text-muted main-filling-price'>${{this.fillingPrice}}</span>
   </li>
 
   {{#if @value.extras}}
@@ -36,7 +36,7 @@
           {{this.extras}}
         </small>
       </div>
-      <span class='text-muted extra-filling-price'>{{this.extrasPrices}}$</span>
+      <span class='text-muted extra-filling-price'>${{this.extrasPrices}}</span>
     </li>
   {{/if}}
 
@@ -53,7 +53,7 @@
       <span class="spinner-grow spinner-grow-sm mt-1" role="status" aria-hidden="true"></span>
     {{else}}
       <strong class='total-price'>
-        {{this.total}}$
+        ${{this.total}}
       </strong>
     {{/if}}
   </li>
