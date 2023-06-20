@@ -71,5 +71,8 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "ember-page-title": "^7.0.0"
   }
 }
