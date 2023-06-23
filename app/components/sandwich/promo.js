@@ -30,9 +30,14 @@ export default class SandwichPromoComponent extends Component {
     this.isError = false;
 
     try {
-      await fetch(`/promo/${this.promo}.json`);
+      const response = await fetch(`/promo/${this.promo}.json`);
 
-      this.args.value.promoCode = this.promo;
+      if (response.status == 200) {
+        this.args.value.promoCode = this.promo;
+      } else {
+        this.args.value.promoCode = '';
+        this.isError = true;
+      }
     } catch(err) {
       this.args.value.promoCode = '';
       this.isError = true;
